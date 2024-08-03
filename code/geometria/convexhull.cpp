@@ -13,7 +13,7 @@ point pivot;
 bool radial_lt(point a, point b) {
   int R = ccw(pivot, a, b);
   if (R == 0) // sao colineares
-    return (pivot - a) * (pivot - a) < (pivot - b) * (pivot - b);
+    return (dot(pivot - a, pivot - a) < dot(pivot - b, pivot - b));
   else
     return (R == 1); // 1 se A esta a direita de (pivot->B)
 }
